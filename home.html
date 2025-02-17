@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title >Check My Health</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/logo_check_my_health.png" type="image/x-icon">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo_check_my_health.png" alt="Logo">
+            <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Check My Health</h1>
+        </div>
+        <div class="header-right">
+            <input type="text" placeholder="Enter your location">
+            <button id="mode-toggle">
+              <div class="slider">
+                  <img src="images/sun.png" alt="Sun Icon" class="sun">
+                  <img src="images/moon.png" alt="Moon Icon" class="moon">
+              </div>
+          </button>
+          
+          
+          <a href="index.html"><button>Login</button></a>
+        </div>
+    </header>
+
+    <!-- Search Bar -->
+    <!-- Search Bar -->
+<section class="search-section">
+    <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="Search for Pathology Labs...">
+        <button id="clear-search" class="clear-search-btn">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</section>
+
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="dropdown">
+            <button class="dropbtn">Filters</button>
+            <div class="dropdown-content">
+                <button>Price</button>
+                <button>Rating</button>
+                <button>Review</button>
+                <button>Timing</button>
+                <button>Specialist</button>
+                <button>Home Collection</button>
+                <button>Pathologies</button>
+                <button>Hospitals</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Price</button>
+            <div class="dropdown-content">
+                <button>Low to High</button>
+                <button>High to Low</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Rating</button>
+            <div class="dropdown-content">
+                <button>4★ & Above</button>
+                <button>3★ & Above</button>
+                <button>Top Rated</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Review</button>
+            <div class="dropdown-content">
+                <button>Most Reviewed</button>
+                <button>Positive Reviews</button>
+                <button>Latest Reviews</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Timing</button>
+            <div class="dropdown-content">
+                <button>Morning</button>
+                <button>Afternoon</button>
+                <button>Evening</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Specialist</button>
+            <div class="dropdown-content">
+                <button>Cardiologists</button>
+                <button>Neurologists</button>
+                <button>Dermatologists</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Home Collection</button>
+            <div class="dropdown-content">
+                <button>Available</button>
+                <button>Not Available</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Pathologies</button>
+            <div class="dropdown-content">
+                <button>Nearby Labs</button>
+                <button>Top Labs</button>
+                <button>Affordable Labs</button>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Hospitals</button>
+            <div class="dropdown-content">
+                <button>Nearby Hospitals</button>
+                <button>Specialist Hospitals</button>
+                <button>Top Rated Hospitals</button>
+            </div>
+        </div>
+
+        <!-- Add more dropdowns as needed -->
+    </section>
+    
+   
+
+
+
+    <!-- Cards Section -->
+    <section class="card-section">
+        <div class="card">
+            <img src="images/yashpathlo.png" alt="Lab Logo">
+            <h3>Yash Pathology</h3>
+            <h4>Dengue Test</h4>
+            <p class="discounted-price">₹50-₹60 (50% Off)</p>
+            <p class="original-price">₹100-₹120</p>
+            <p>4.6 ★ (2,678 Reviews)</p>
+            <p>Bawadia Kalan, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 2 -->
+          <div class="card">
+            <img src="images/Sehat Pathology.png" alt="Lab Logo">
+            <h3>Sehat Pathology</h3>
+            <h4>Malaria Test</h4>
+            <p class="discounted-price">₹60-₹70 (30% Off)</p>
+            <p class="original-price">₹90-₹100</p>
+            <p>4.7 ★ (3,200 Reviews)</p>
+            <p>Hoshangabad Road, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 3 -->
+          <div class="card">
+            <img src="images/MedLab.png" alt="Lab Logo">
+            <h3>MedLabs Bhopal</h3>
+            <h4>Typhoid Test</h4>
+            <p class="discounted-price">₹45-₹55 (40% Off)</p>
+            <p class="original-price">₹75-₹85</p>
+            <p>4.5 ★ (1,800 Reviews)</p>
+            <p>MP Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 4 -->
+          <div class="card">
+            <img src="images/lifecare.png" alt="Lab Logo">
+            <h3>LifeCare Pathology</h3>
+            <h4>Cholera Test</h4>
+            <p class="discounted-price">₹80-₹90 (20% Off)</p>
+            <p class="original-price">₹100-₹120</p>
+            <p>4.3 ★ (1,300 Reviews)</p>
+            <p>Chetak Bridge, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 5 -->
+          <div class="card">
+            <img src="images/patholab.png" alt="Lab Logo">
+            <h3>PathoPlus</h3>
+            <h4>Hepatitis Test</h4>
+            <p class="discounted-price">₹90-₹100 (10% Off)</p>
+            <p class="original-price">₹110-₹120</p>
+            <p>4.6 ★ (2,100 Reviews)</p>
+            <p>Ashoka Garden, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 6 -->
+          <div class="card">
+            <img src="images/unicare.png" alt="Lab Logo">
+            <h3>Unicure Pathology</h3>
+            <h4>COVID-19 Test</h4>
+            <p class="discounted-price">₹100-₹110 (20% Off)</p>
+            <p class="original-price">₹120-₹140</p>
+            <p>4.9 ★ (3,000 Reviews)</p>
+            <p>Koh-e-Fiza, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 7 -->
+          <div class="card">
+            <img src="images/reliable.png" alt="Lab Logo">
+            <h3>Reliable Pathlab</h3>
+            <h4>Thyroid Test</h4>
+            <p class="discounted-price">₹65-₹75 (15% Off)</p>
+            <p class="original-price">₹85-₹95</p>
+            <p>4.4 ★ (1,700 Reviews)</p>
+            <p>Bairagarh, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+        
+          <!-- Card 8 -->
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p class="discounted-price">₹50-₹60 (30% Off)</p>
+            <p class="original-price">₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/advance_patho.png" alt="Lab Logo">
+            <h3>Advanced Patho</h3>
+            <h4>Blood Sugar Test</h4>
+            <p>₹50-₹60 (30% Off)</p>
+            <p>₹70-₹80</p>
+            <p>4.8 ★ (2,500 Reviews)</p>
+            <p>TT Nagar, Bhopal</p>
+            <div class="buttons">
+              <button>Book Now</button>
+              <a href="whatsapp://">WhatsApp</a>
+              <a href="mailto:contact@lab.com">Contact</a>
+            </div>
+          </div>
+    </section>
+
+    <div id="load-more-container">
+        <button id="load-more" class="load-more-btn">Load More..</button>
+        <button id="wrap-up" class="wrap-up-btn" style="display:none;">Wrap Up</button> <!-- Wrap Up Button -->
+    </div>
+    
+    
+    <!-- Top Specialties -->
+    <!-- Top Specialties -->
+<section class="top-specialties">
+  <h2>Top Searched Specialties</h2>
+  <div class="specialties-list">
+      <div class="specialty">
+          <i class="fas fa-thermometer-half"></i>
+          <p>Fever Test</p>
+      </div>
+      <div class="specialty">
+        <!-- Kidney Test -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50">
+            <path d="M32 4C20 4 12 12 12 24c0 16 8 36 20 36s20-20 20-36C52 12 44 4 32 4z" fill="#66ccff"></path>
+            <path d="M26 24c0-4 4-6 6-6s6 2 6 6-4 8-6 8-6-4-6-8z" fill="#fff"></path>
+            <path d="M38 24c0-4 4-6 6-6s6 2 6 6-4 8-6 8-6-4-6-8z" fill="#fff"></path>
+        </svg>
+        <p>Kidney Test</p>
+    </div>
+      <div class="specialty">
+          <i class="fas fa-heartbeat"></i>
+          <p>Heart Test</p>
+      </div>
+      <div class="specialty">
+        <!-- Dengue Test -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50">
+            <circle cx="32" cy="32" r="30" fill="#ff4d4d"></circle>
+            <path d="M32 10v44M22 16l20 20M42 16L22 36M16 22l12 20M48 22L36 42" stroke="#fff" stroke-width="2" fill="none"/>
+            <circle cx="32" cy="32" r="6" fill="#fff"></circle>
+        </svg>
+        <p>Dengue Test</p>
+    </div>
+    
+    <div class="specialty">
+      <!-- Malaria Test -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50">
+          <circle cx="32" cy="32" r="30" fill="#ffd700"></circle>
+          <path d="M22 24c4-10 16-10 20 0M20 38c-2 8 6 14 12 14s14-6 12-14M32 8v4M32 52v4M8 32h4M52 32h4" stroke="#000" stroke-width="2" fill="none"/>
+          <circle cx="32" cy="32" r="6" fill="#000"></circle>
+      </svg>
+      <p>Malaria Test</p>
+  </div>
+  <div class="specialty">
+    <!-- COVID Test -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="50" height="50">
+        <circle cx="32" cy="32" r="20" fill="#ff6b6b"></circle>
+        <g stroke="#fff" stroke-width="2">
+            <!-- Outer spikes -->
+            <line x1="32" y1="8" x2="32" y2="2" />
+            <line x1="32" y1="56" x2="32" y2="62" />
+            <line x1="8" y1="32" x2="2" y2="32" />
+            <line x1="56" y1="32" x2="62" y2="32" />
+            <line x1="16" y1="16" x2="10" y2="10" />
+            <line x1="48" y1="48" x2="54" y2="54" />
+            <line x1="16" y1="48" x2="10" y2="54" />
+            <line x1="48" y1="16" x2="54" y2="10" />
+            <!-- Inner spikes -->
+            <line x1="32" y1="20" x2="32" y2="14" />
+            <line x1="32" y1="44" x2="32" y2="50" />
+            <line x1="20" y1="32" x2="14" y2="32" />
+            <line x1="44" y1="32" x2="50" y2="32" />
+        </g>
+        <!-- Inner virus detail -->
+        <circle cx="32" cy="32" r="10" fill="#fff"></circle>
+        <circle cx="28" cy="28" r="2" fill="#ff6b6b"></circle>
+        <circle cx="36" cy="36" r="2" fill="#ff6b6b"></circle>
+        <circle cx="28" cy="36" r="2" fill="#ff6b6b"></circle>
+        <circle cx="36" cy="28" r="2" fill="#ff6b6b"></circle>
+    </svg>
+    <p>COVID Test</p>
+</div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Check My Health. All Rights Reserved.</p>
+      <div class="footer-links">
+          <a href="#"><i class="fas fa-user-shield"></i> Privacy</a>
+          <a href="#"><i class="fas fa-file-alt"></i> Terms</a>
+          <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+      <div class="social-links">
+          <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:contact@checkmyhealth.com"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+  </footer>
+  
+
+    <script src="script.js"></script>
+</body>
+</html>
