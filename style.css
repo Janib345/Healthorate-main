@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('BG1.webp') no-repeat center center/cover;
+    margin: 0;
+}
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 10px;
+}
+.input-container {
+    position: relative;
+    width: 100%;
+}
+.input-field {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-right: 40px;
+}
+.eye-icon, .info-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.info-icon {
+    right: 35px;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 129px;
+    padding-top: 10px;
+    font-size: 14px;
+}
+.terms, .links {
+    font-size: 12px;
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 55px;
+}
+.terms a, .links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.terms a:focus, .links a:focus,
+.terms a:visited, .links a:visited {
+    color: #007bff;
+}
+.login-button, .google-button {
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid rgb(3, 3, 3);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+.login-button:active, .google-button:active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+hr {
+    border: none;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
+}
+/* Style for Email Field Container */
+.email-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin: 10px auto;
+}
+
+/* Style for Password Field Container */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+    margin: 10px auto;
+}
+
+/* Style for Icons */
+.info-icon, .eye-icon {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+}

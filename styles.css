@@ -1,0 +1,728 @@
+/* Variables */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #f4f7fc;
+    --text-color: #333;
+    --white: #fff;
+    --dark-bg: #222;
+    --dark-text: #f4f4f4;
+    --card-bg-dark: #444;
+    --card-hover-shadow: rgba(0, 0, 0, 0.3);
+
+    --darkbg:#251D29;
+  --darkt: #FFD1F7;
+  --lightbg: #fff;
+  --lightt: #D43370;
+  
+  --toggleHeight: 16em;
+  --toggleWidth: 30em;
+  --toggleBtnRadius: 10em;
+
+  --bgColor--night: #423966;
+  --toggleBtn-bgColor--night: var(--bgColor--night);
+  --mooncolor: #D9FBFF;
+  --bgColor--day: #9ee3fb;
+  --toggleBtn-bgColor--day: var(--bgColor--day);
+}
+
+body{
+  transition: all .2s ease-in-out;
+  background: var(--darkbg);
+  color: var(--darkt);
+  text-align: center;
+}
+.light{
+  background: var(--lightbg);
+  color: var(--lightt);
+}
+.tdnn {
+  margin: 0 auto;
+  /*change size of toggle with font-size*/
+  font-size: 30%;
+  margin-top: 10em;
+   position: relative;
+    height: var(--toggleHeight);
+    width: var(--toggleWidth);
+    border-radius: var(--toggleHeight);
+  transition: all 500ms ease-in-out;
+  background: var(--bgColor--night);
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    backdrop-filter: blur(8px); /* Applies the blur effect to the background in dark mode */
+}
+/* Toggle Button */
+/* Mode Toggle Styles */
+#mode-toggle {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #fbfbfb; /* Default light mode color */
+    border: 2px solid #ffd700;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Slider Container */
+#mode-toggle .slider {
+    position: absolute;
+    width: 200%; /* Double width for both sun and moon icons */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.4s ease; /* Smooth slide effect */
+}
+
+/* Icons */
+#mode-toggle img {
+    width: 24px; /* Adjust the size of the icons */
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+/* Sun Icon (default light mode) */
+.slider .sun {
+    margin-left: 10px;
+    opacity: 1;
+}
+
+/* Moon Icon (hidden in light mode) */
+.slider .moon {
+    margin-right: 10px;
+    opacity: 0;
+}
+
+/* Dark Mode */
+body.dark-mode #mode-toggle {
+    background-color: #4a4a4a; /* Dark mode background */
+    border-color: #4a4a4a;
+}
+
+body.dark-mode #mode-toggle .slider {
+    transform: translateX(-50%); /* Slide to show moon */
+}
+
+body:not(.dark-mode) #mode-toggle .slider {
+    transform: translateX(0); /* Slide to show sun */
+}
+
+
+/* Sun and Moon visibility in respective modes */
+body:not(.dark-mode) .sun {
+    opacity: 1; /* Sun is visible in light mode */
+}
+
+body:not(.dark-mode) .moon {
+    opacity: 0; /* Moon is hidden in light mode */
+}
+
+body.dark-mode .sun {
+    opacity: 0; /* Sun is hidden in dark mode */
+}
+
+body.dark-mode .moon {
+    opacity: 1; /* Moon is visible in dark mode */
+}
+
+/* Optional: Hover effect for better UI */
+#mode-toggle:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+body.dark-mode #mode-toggle .slider {
+    transform: translateX(-50%); /* Slide to reveal moon */
+}
+
+
+
+/* Header */
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    opacity: 0.95;
+    padding: 20px;
+    color: var(--white);
+    z-index: 1;
+    backdrop-filter: blur(8px); /* Apply blur effect to header */
+}
+
+body.dark-mode .header {
+    background-color: transparent; /* Make header background transparent in dark mode */
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .logo img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.header .logo img:hover {
+    transform: scale(1.1);
+}
+
+.header .logo h1 {
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: bold;
+    margin: 0;
+}
+
+.header .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .header-right input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.header .header-right button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+
+.header .header-right button:hover {
+    background-color: #0056b3;
+    color: var(--white);
+}
+
+/* Location Input Styling */
+.search-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.search-section input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Search Cross Button Styling */
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: red;
+    border: none;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+/* Make search cross visible when input is focused or not empty */
+#search-input:focus + .clear-search-btn,
+#search-input:not(:placeholder-shown) + .clear-search-btn {
+    visibility: visible;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .search-section input {
+        padding-right: 30px; /* Provide space for the cross button */
+    }
+
+    .clear-search-btn {
+        right: 5px; /* Position it correctly for smaller screens */
+        padding: 5px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-section input {
+        padding-right: 25px; /* Adjust padding for very small screens */
+    }
+
+    .clear-search-btn {
+        right: 5px; /* Ensure it stays on the right side */
+        padding: 5px 8px;
+    }
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(8px); /* Apply blur effect to filters */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for dropdown button */
+.dropbtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show dropdown content with a smooth animation */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+/* Dropdown items */
+.dropdown-content button {
+    padding: 12px;
+    width: 100%;
+    border: none;
+    background: var(--white);
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-content button:hover {
+    background-color: #f4f4f4;
+    padding-left: 20px;
+}
+
+/* Card Section */
+/* General body styling */
+body {
+    background-color: #f4f4f9; /* Light background for normal mode */
+    color: #333; /* Default text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background for the whole page */
+    color: #f0f0f0; /* Light text color for general text */
+}
+
+/* Card Section */
+.card-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Ensures exactly 4 cards per row */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Dark Mode Card Section */
+body.dark-mode .card-section {
+    background-color: #1e1e1e; /* Dark background for card section */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: auto;
+    transform: translateY(10px);
+}
+
+/* Dark Mode Cards */
+body.dark-mode .card {
+    box-shadow: 0 4px 8px rgba(241, 235, 235, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #333; /* Dark background for each card */
+    color: #f0f0f0; /* Light text color inside the card */
+    border: 1px solid #eaeaea; /* Dark border for cards */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(148, 143, 143, 0.2);
+}
+
+/* Dark Mode Card Hover */
+body.dark-mode .card:hover {
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.2); /* Lighter shadow for dark mode */
+}
+
+/* Card Image */
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 10%;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card p{
+    text-align: center;
+}
+
+/* Dark Mode Card Image */
+body.dark-mode .card img {
+    border-radius: 10%;
+}
+
+/* Card Titles */
+.card h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Dark Mode Card Titles */
+body.dark-mode .card h3 {
+    color: #f0f0f0; /* Light color for card titles */
+}
+
+/* Card Subtitles */
+.card h4 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #555;
+    text-align: center;
+}
+
+/* Dark Mode Card Subtitles */
+body.dark-mode .card h4 {
+    color: #bbb; /* Lighter color for subheadings */
+}
+
+/* Price Styling */
+.card .original-price {
+    font-size: 0.9rem;
+    color: #777;
+    text-decoration: line-through;
+    margin: 5px 0;
+    text-align: center;
+}
+
+/* Dark Mode Price Styling */
+body.dark-mode .card .original-price {
+    color: #ccc; /* Light color for the original price in dark mode */
+}
+
+/* Discounted Price */
+.card .discounted-price {
+    font-size: 1rem;
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Dark Mode Discounted Price */
+body.dark-mode .card .discounted-price {
+    color: rgb(20, 250, 250); /* Brighter text for discounted price */
+}
+
+
+
+/* Buttons */
+.buttons {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button,
+.buttons a {
+    padding: 8px 12px;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap; /* Prevents text inside buttons from breaking */
+}
+
+.buttons button:hover,
+.buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Load More Button */
+#load-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.load-more-btn, .wrap-up-btn {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    margin: 10px;
+}
+
+.load-more-btn:hover, .wrap-up-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .load-more-btn, body.dark-mode .wrap-up-btn {
+    background-color: var(--card-bg-dark);
+    color: var(--dark-text);
+}
+
+body.dark-mode .load-more-btn:hover, body.dark-mode .wrap-up-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Footer */
+/* Footer Styling */
+.footer {
+    background-color: var(--primary-color); /* Background color using CSS variable */
+    color: var(--white); /* Text color using CSS variable */
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Footer Links */
+.footer .footer-links a {
+    color: var(--white); /* White color for footer links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+}
+
+.footer .footer-links a:hover {
+    color: #ddd; /* Light color on hover */
+}
+
+/* Footer Icons */
+.footer .social-links {
+    margin-top: 15px;
+}
+
+.footer .social-links a {
+    color: var(--white); /* White color for social media icons */
+    font-size: 1.5rem; /* Size of the icons */
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer .social-links a:hover {
+    color: #ddd; /* Light color on hover */
+}
+
+/* Icon margin */
+.footer .social-links i {
+    margin-right: 8px;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card h3, .card h4 {
+        font-size: 0.9rem;
+    }
+
+    .card p {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-section {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .buttons button,
+    .buttons a {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+    }
+}
+
+/* Top Specialties */
+.top-specialties {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--secondary-color);
+    animation: fadeIn 1s ease-out;
+}
+
+.top-specialties h2 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.top-specialties .specialties-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-specialties .specialties-list .specialty {
+    background-color: var(--white);
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.top-specialties .specialties-list .specialty:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.top-specialties .specialties-list .specialty i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .top-specialties {
+    background-color: #333;
+}
+
+body.dark-mode .top-specialties h2 {
+    color: whitesmoke;
+}
+
+body.dark-mode .top-specialties .specialty {
+    background-color: var(--card-bg-dark);
+    color: var(--dark-text);
+}
+
+body.dark-mode .top-specialties .specialties-list .specialty:hover {
+    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.2);
+}
+
