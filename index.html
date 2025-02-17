@@ -579,6 +579,140 @@
   </footer>
   
 
-    <script src="script.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const modeToggle = document.getElementById('mode-toggle');
+    const isDarkMode = localStorage.getItem('theme') === 'dark';
+
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+    }
+
+    modeToggle.addEventListener('click', () => {
+        const darkModeActive = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('theme', darkModeActive ? 'dark' : 'light');
+    });
+});
+
+
+
+
+
+
+const clearSearchButton = document.getElementById('clear-search');
+const searchInput = document.getElementById('search-input');
+
+// Function to toggle visibility of the clear button based on input value
+searchInput.addEventListener('input', () => {
+    if (searchInput.value.trim() !== '') {
+        clearSearchButton.style.visibility = 'visible'; // Show the cross when there is text
+    } else {
+        clearSearchButton.style.visibility = 'hidden'; // Hide the cross when there is no text
+    }
+});
+
+// Clear input when the clear search button is clicked
+clearSearchButton.addEventListener('click', () => {
+    searchInput.value = ''; // Clear the input
+    clearSearchButton.style.visibility = 'hidden'; // Hide the red cross when input is cleared
+});
+
+// Dropdown Functionality
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('.dropbtn');
+    const content = dropdown.querySelector('.dropdown-content');
+    
+    // Toggle dropdown visibility on button click
+    button.addEventListener('click', () => {
+        content.classList.toggle('show');
+    });
+});
+
+// Close dropdowns if clicked outside of it
+window.addEventListener('click', function(event) {
+    dropdowns.forEach(dropdown => {
+        const content = dropdown.querySelector('.dropdown-content');
+        if (!dropdown.contains(event.target)) {
+            content.classList.remove('show');
+        }
+    });
+});
+
+const loadMoreButton = document.getElementById("load-more");
+const wrapUpButton = document.getElementById("wrap-up");
+const allCards = document.querySelectorAll(".card"); // All cards in the section
+let visibleCards = 8; // Initially display 9 cards
+let totalCards = allCards.length; // Total number of cards
+
+// Function to display the cards
+function displayCards() {
+    // Hide all cards initially
+    allCards.forEach(card => {
+        card.style.display = "none";
+    });
+
+    // Show the first 'visibleCards' cards
+    for (let i = 0; i < visibleCards && i < totalCards; i++) {
+        allCards[i].style.display = "block";
+    }
+
+    // If there are no more cards to show, hide the "Load More" button
+    if (visibleCards >= totalCards) {
+        loadMoreButton.style.display = "none";
+    } else {
+        loadMoreButton.style.display = "inline-block";
+    }
+
+    // Show "Wrap Up" button only if more than 9 cards are visible
+    if (visibleCards > 9) {
+        wrapUpButton.style.display = "inline-block";
+    } else {
+        wrapUpButton.style.display = "none";
+    }
+}
+
+// Initially display the first 9 cards
+displayCards();
+
+// Event listener for the "Load More" button
+loadMoreButton.addEventListener("click", () => {
+    visibleCards += 8; // Load 8 more cards each time
+    displayCards();
+});
+
+// Event listener for the "Wrap Up" button
+wrapUpButton.addEventListener("click", () => {
+    visibleCards = 8; // Reset back to 9 cards
+    displayCards();
+});
+
+
+
+// Function to translate text using LibreTranslate API
+async function translateTextLibre(text, targetLanguage) {
+    const url = "https://libretranslate.com/translate";
+
+    const response = await fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            q: text,
+            source: "en", // Assuming the original text is in English
+            target: targetLanguage,
+            format: "text",
+        }),
+    });
+
+    const result = await response.json();
+    return result.translatedText;
+}
+
+// Function to translate all elements with the class '
+    </script>
 </body>
 </html>
